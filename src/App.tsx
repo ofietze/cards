@@ -1,17 +1,21 @@
 import React from "react";
 import "./App.css";
-import { Card } from "./Card";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import DeckViewer from "./pages/DeckViewer";
+import Home from "./pages/Home";
+import CreateDeck from "./pages/CreateDeck";
 
 function App() {
   return (
-    <div className="App">
-      <h1>Cards</h1>
-      <div className="card-container">
-        <Card question="Who's the cutest?" answer="Cami" />
-        <Card question="What is 2 + 2?" answer="4" />
-        {/* Add more cards as needed */}
+    <Router>
+      <div className="App">
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/:encodedDeck" element={<DeckViewer />} />
+          <Route path="/create" element={<CreateDeck />} />
+        </Routes>
       </div>
-    </div>
+    </Router>
   );
 }
 
