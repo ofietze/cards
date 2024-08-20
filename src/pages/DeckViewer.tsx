@@ -1,7 +1,6 @@
 import React from "react";
 import CardDeck, { CardData } from "../components/CardDeck";
 import "./DeckViewer.css";
-import { useSearchParams } from "react-router-dom";
 import { decodeDeck } from "../utils";
 
 export interface Deck {
@@ -10,8 +9,7 @@ export interface Deck {
 }
 
 export const DeckViewer = () => {
-  const [searchParams] = useSearchParams();
-  const encodedDeck = searchParams.get("deck");
+  const encodedDeck = window.location.hash?.substring(1);
   const decodedDeck = encodedDeck && decodeDeck(encodedDeck);
 
   return (

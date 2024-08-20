@@ -31,7 +31,7 @@ const CreateDeck: React.FC = () => {
 
   const handleShareDeck = () => {
     const encodedDeck = encodeDeck({ name: deckName, cards });
-    navigate(`/view?deck=${encodedDeck}`);
+    navigate(`/view#${encodedDeck}`);
   };
 
   return (
