@@ -11,7 +11,7 @@ function App() {
       <div className="App">
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/:encodedDeck" element={<DeckViewer />} />
+          <Route path="/view" element={<DeckViewer />} />
           <Route path="/create" element={<CreateDeck />} />
         </Routes>
       </div>
