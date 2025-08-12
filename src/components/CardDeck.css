@@ -1,15 +1,16 @@
 .card-deck {
   display: flex;
+  width: 100%;
   flex-direction: column;
   align-items: center;
   padding: 20px;
-  background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+  transition: all 0.3s ease;
 }
 
 .deck-title {
   font-size: 2em;
   margin-bottom: 30px;
-  color: #333;
+  color: var(--text-primary);
   text-align: center;
 }
 
@@ -28,30 +29,30 @@
   transition: all 0.4s ease;
   cursor: pointer;
   transform-origin: center;
-  filter: drop-shadow(2px 4px 8px rgba(0, 0, 0, 0.15));
+  filter: drop-shadow(2px 4px 8px var(--shadow-medium));
 }
 
 .card-wrapper.active {
   z-index: 10;
   transform: translateX(0);
-  filter: drop-shadow(4px 8px 16px rgba(0, 0, 0, 0.25));
+  filter: drop-shadow(4px 8px 16px var(--shadow-heavy));
 }
 
 .card-wrapper:not(.active) {
   z-index: 1;
-  filter: drop-shadow(1px 2px 4px rgba(0, 0, 0, 0.1));
+  filter: drop-shadow(1px 2px 4px var(--shadow-light));
 }
 
 .card-wrapper:hover:not(.active) {
   z-index: 2;
   transform: translateY(-5px);
-  filter: drop-shadow(2px 6px 12px rgba(0, 0, 0, 0.2));
+  filter: drop-shadow(2px 6px 12px var(--shadow-medium));
 }
 
 .card-info {
   margin: 20px 0;
   font-size: 1.1em;
-  color: #666;
+  color: var(--text-secondary);
 }
 
 .navigation {
@@ -60,7 +61,8 @@
   margin-top: 20px;
 }
 
-.nav-button, .flip-button {
+.nav-button,
+.flip-button {
   padding: 12px 24px;
   border: none;
   border-radius: 25px;
@@ -71,30 +73,30 @@
 }
 
 .nav-button {
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  background: var(--card-bg-front);
   color: white;
 }
 
 .nav-button:hover:not(:disabled) {
   transform: translateY(-2px);
-  box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+  box-shadow: 0 5px 15px var(--shadow-medium);
 }
 
 .nav-button:disabled {
-  background: #ccc;
+  background: var(--text-secondary);
   cursor: not-allowed;
   transform: none;
   box-shadow: none;
 }
 
 .flip-button {
-  background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+  background: var(--card-bg-back);
   color: white;
 }
 
 .flip-button:hover {
   transform: translateY(-2px);
-  box-shadow: 0 5px 15px rgba(240, 147, 251, 0.4);
+  box-shadow: 0 5px 15px var(--shadow-medium);
 }
 
 .card-deck-empty {

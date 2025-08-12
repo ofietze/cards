@@ -1,16 +1,28 @@
 .deck-viewer {
   min-height: 100vh;
-  background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+  background: var(--bg-primary);
+  transition: all 0.3s ease;
 }
 
 .deck-header {
-  display: flex;
-  justify-content: space-between;
+  display: grid;
+  grid-template-columns: auto 1fr auto;
   align-items: center;
   padding: 20px;
-  background: rgba(255, 255, 255, 0.9);
+  background: var(--bg-secondary);
   backdrop-filter: blur(10px);
-  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  border-bottom: 1px solid var(--border-color);
+}
+
+.deck-title-header {
+  font-size: 2.5em;
+  font-weight: 700;
+  margin: 0;
+  text-align: center;
+  background: var(--card-bg-front);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 .home-btn, .share-btn {
@@ -24,18 +36,18 @@
 }
 
 .home-btn {
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  background: var(--card-bg-front);
   color: white;
 }
 
 .share-btn {
-  background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+  background: var(--card-bg-back);
   color: white;
 }
 
 .home-btn:hover, .share-btn:hover {
   transform: translateY(-2px);
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 5px 15px var(--shadow-medium);
 }
 
 .deck-viewer-error {
@@ -43,15 +55,16 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+  background: var(--bg-primary);
 }
 
 .error-container {
   text-align: center;
-  background: white;
+  background: var(--bg-secondary);
   padding: 40px;
   border-radius: 10px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 10px 30px var(--shadow-light);
+  color: var(--text-primary);
 }
 
 .error-container h2 {
@@ -60,7 +73,7 @@
 }
 
 .error-container p {
-  color: #666;
+  color: var(--text-secondary);
   margin-bottom: 25px;
   font-size: 1.1em;
 }
@@ -70,9 +83,9 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+  background: var(--bg-primary);
   font-size: 1.2em;
-  color: #666;
+  color: var(--text-secondary);
 }
 
 @media (max-width: 768px) {

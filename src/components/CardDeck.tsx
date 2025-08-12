@@ -15,20 +15,6 @@ const CardDeck: React.FC<CardDeckProps> = ({ deck }) => {
     setIsFlipped(!isFlipped);
   };
 
-  const handleNext = () => {
-    if (currentIndex < deck.cards.length - 1) {
-      setCurrentIndex(currentIndex + 1);
-      setIsFlipped(false);
-    }
-  };
-
-  const handlePrevious = () => {
-    if (currentIndex > 0) {
-      setCurrentIndex(currentIndex - 1);
-      setIsFlipped(false);
-    }
-  };
-
   if (deck.cards.length === 0) {
     return (
       <div className="card-deck-empty">
@@ -75,8 +61,6 @@ const CardDeck: React.FC<CardDeckProps> = ({ deck }) => {
 
   return (
     <div className="card-deck">
-      <h2 className="deck-title">{deck.name}</h2>
-
       <div className="cards-row">
         {deck.cards.map((card, index) => (
           <div
