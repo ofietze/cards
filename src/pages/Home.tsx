@@ -1,75 +1,54 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
+import CardDeck from '../components/CardDeck';
+import { Deck } from '../utils';
 import './Home.css';
 
 const Home: React.FC = () => {
   const navigate = useNavigate();
 
+  const tutorialDeck: Deck = {
+    name: "How to Use Cards",
+    cards: [
+      {
+        question: "What is Cards?",
+        answer: "Cards is a flashcard app that lets you create and share interactive decks with no backend required. Everything is stored in URLs!"
+      },
+      {
+        question: "How do I create a new deck?",
+        answer: "Click 'Create New Deck' below to start building your own flashcard deck with custom questions and answers."
+      },
+      {
+        question: "How do cards work?",
+        answer: "Click any card to flip between question and answer. Use Previous/Next buttons or the flip button to navigate through your deck."
+      },
+      {
+        question: "How do I share a deck?",
+        answer: "After creating your deck, you'll get a URL that contains your entire deck. Share this URL and others can view your cards immediately!"
+      },
+      {
+        question: "Where is my data stored?",
+        answer: "No servers needed! Your deck data is compressed and encoded directly into the URL using LZ-String compression."
+      },
+      {
+        question: "Ready to create your own deck?",
+        answer: "Click the 'Create New Deck' button below to get started building your first flashcard deck!"
+      }
+    ]
+  };
+
   return (
     <div className="home">
       <div className="home-container">
-        <div className="hero-section">
-          <h1>Cards</h1>
-          <p className="subtitle">
-            Create and share interactive flashcard decks with no backend required
-          </p>
-          
-          <div className="features">
-            <div className="feature">
-              <div className="feature-icon">🃏</div>
-              <h3>Create Custom Decks</h3>
-              <p>Build flashcard decks with questions and answers</p>
-            </div>
-            
-            <div className="feature">
-              <div className="feature-icon">🔄</div>
-              <h3>Interactive Cards</h3>
-              <p>Click to flip between question and answer sides</p>
-            </div>
-            
-            <div className="feature">
-              <div className="feature-icon">🔗</div>
-              <h3>URL-Based Sharing</h3>
-              <p>Share complete decks via compressed URLs</p>
-            </div>
-          </div>
-
-          <div className="cta-section">
-            <button 
-              onClick={() => navigate('/create')}
-              className="create-btn"
-            >
-              Create New Deck
-            </button>
-            
-            <div className="demo-info">
-              <p>
-                Or paste a shared deck URL in your browser to view someone else's deck
-              </p>
-            </div>
-          </div>
-        </div>
-
-        <div className="how-it-works">
-          <h2>How It Works</h2>
-          <div className="steps">
-            <div className="step">
-              <span className="step-number">1</span>
-              <p>Create a new deck with custom questions and answers</p>
-            </div>
-            <div className="step">
-              <span className="step-number">2</span>
-              <p>Click "Create & Share Deck" to generate a URL</p>
-            </div>
-            <div className="step">
-              <span className="step-number">3</span>
-              <p>Share the URL - others can view your deck immediately</p>
-            </div>
-            <div className="step">
-              <span className="step-number">4</span>
-              <p>No server or database needed - everything is in the URL</p>
-            </div>
-          </div>
+        <CardDeck deck={tutorialDeck} />
+        
+        <div className="cta-section">
+          <button 
+            onClick={() => navigate('/create')}
+            className="create-btn"
+          >
+            Create New Deck
+          </button>
         </div>
       </div>
     </div>
