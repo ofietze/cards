@@ -1,6 +1,6 @@
 # Cards
 
-A React TypeScript flashcard application for creating and sharing interactive study decks. Share entire decks through compressed URLs - no backend required.
+A React TypeScript flashcard application built with Vite for creating and sharing interactive study decks. Share entire decks through compressed URLs - no backend required.
 
 ## Features
 
@@ -16,7 +16,7 @@ A React TypeScript flashcard application for creating and sharing interactive st
 # Install dependencies
 npm install
 
-# Start development server (runs on http://localhost:5173/cards/)
+# Start development server (runs on http://localhost:5173/)
 npm start
 
 # Build for production
