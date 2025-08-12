@@ -28,7 +28,7 @@ const Home: React.FC = () => {
       {
         question: "Ready to create your own deck?",
         answer:
-          "Click the 'Create New Deck' button below to get started building your first flashcard deck!",
+          "Click the 'Create New Deck' button to get started building your first flashcard deck!",
       },
     ],
   };
@@ -43,7 +43,7 @@ const Home: React.FC = () => {
           Create New Deck
         </button>
       </nav>
-      
+
       <div className="home-container">
         <CardDeck deck={tutorialDeck} />
       </div>
