@@ -1,23 +1,29 @@
-import React from "react";
-import "./Card.css";
-import { CardData } from "./CardDeck";
+import React from 'react';
+import { CardData } from '../utils';
+import './Card.css';
 
-interface CardProps extends CardData {
+interface CardProps {
+  card: CardData;
   isFlipped: boolean;
-  onClick: () => void;
+  onFlip: () => void;
 }
 
-export const Card: React.FC<CardProps> = ({
-  question,
-  answer,
-  isFlipped,
-  onClick,
-}) => {
+const Card: React.FC<CardProps> = ({ card, isFlipped, onFlip }) => {
   return (
-    <div className={`card ${isFlipped ? "flipped" : ""}`} onClick={onClick}>
-      <div className="card-content">
-        <div className="question">{question}</div>
-        <div className="answer">{answer}</div>
+    <div className={`card ${isFlipped ? 'flipped' : ''}`} onClick={onFlip}>
+      <div className="card-inner">
+        <div className="card-front">
+          <div className="card-content">
+            <h3>Question</h3>
+            <p>{card.question}</p>
+          </div>
+        </div>
+        <div className="card-back">
+          <div className="card-content">
+            <h3>Answer</h3>
+            <p>{card.answer}</p>
+          </div>
+        </div>
       </div>
     </div>
   );

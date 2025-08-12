@@ -1,16 +1,77 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import React from 'react';
+import { useNavigate } from 'react-router-dom';
+import './Home.css';
 
 const Home: React.FC = () => {
+  const navigate = useNavigate();
+
   return (
-    <div>
-      <h1>Welcome to cards</h1>
-      <Link to="/view#N4IgdiBcIFIIYAc5gAQEUCuBLAXiANCAMZQDaoAjlCAOoAWcALilgM4qN0CmKYcAtjwD2AMw7cUIrACdWzLvwRdpQ6SlEp4SMPg7S4AEyyMsQvgBtzATxREzrLAeVcD4niKEYwTtRq3IAfgIQOGoAUUVlVU0sfn4MEABffEpqeiYUAHc4dk4eE0ZzHgBzLAA3LlRGITcUfixzYzhpGyMiRiZVdky6GukMItd-VBEVflqARgAmTg4avJQJgE5ZokrGDGksLlYgwlDoAGVe4q8klJAqaHTmNlrGZXGPNQW7J3UxXrBo5Fd+VTg5nYTgq5iESlcACMbAthjseKwBJs4Fg9iFqAAhDCsOiOITnVLXXFEOgoaRcRqlMy6VRYUp8ExgYosVDDXRYMBlITmCq5CSZLq4hAfFAAawEWBQvyyORQ3DgZQaNg5InMGEqayhNmQRG2YGYyFibBMRBQCH07Swa12wQOIGOHOqBMuaQYtz5PD4ghFCyUWyErlGQnGEwAbAAGADMc0WAA5Q7GUAZNhzmT0raThmaLSaXFKzdyrTYNAzTBYWKxuUwyygABSI0VCUUYACUaLtABUJGEDDUAArKUwGJIAXUSQA">
-        <button>Start a Game</button>
-      </Link>
-      <Link to="/create">
-        <button>Create New Deck</button>
-      </Link>
+    <div className="home">
+      <div className="home-container">
+        <div className="hero-section">
+          <h1>Cards</h1>
+          <p className="subtitle">
+            Create and share interactive flashcard decks with no backend required
+          </p>
+          
+          <div className="features">
+            <div className="feature">
+              <div className="feature-icon">🃏</div>
+              <h3>Create Custom Decks</h3>
+              <p>Build flashcard decks with questions and answers</p>
+            </div>
+            
+            <div className="feature">
+              <div className="feature-icon">🔄</div>
+              <h3>Interactive Cards</h3>
+              <p>Click to flip between question and answer sides</p>
+            </div>
+            
+            <div className="feature">
+              <div className="feature-icon">🔗</div>
+              <h3>URL-Based Sharing</h3>
+              <p>Share complete decks via compressed URLs</p>
+            </div>
+          </div>
+
+          <div className="cta-section">
+            <button 
+              onClick={() => navigate('/create')}
+              className="create-btn"
+            >
+              Create New Deck
+            </button>
+            
+            <div className="demo-info">
+              <p>
+                Or paste a shared deck URL in your browser to view someone else's deck
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div className="how-it-works">
+          <h2>How It Works</h2>
+          <div className="steps">
+            <div className="step">
+              <span className="step-number">1</span>
+              <p>Create a new deck with custom questions and answers</p>
+            </div>
+            <div className="step">
+              <span className="step-number">2</span>
+              <p>Click "Create & Share Deck" to generate a URL</p>
+            </div>
+            <div className="step">
+              <span className="step-number">3</span>
+              <p>Share the URL - others can view your deck immediately</p>
+            </div>
+            <div className="step">
+              <span className="step-number">4</span>
+              <p>No server or database needed - everything is in the URL</p>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   );
 };

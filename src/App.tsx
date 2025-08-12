@@ -1,22 +1,22 @@
-import React from "react";
-import "./App.css";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import DeckViewer from "./pages/DeckViewer";
-import Home from "./pages/Home";
-import CreateDeck from "./pages/CreateDeck";
+import React from 'react';
+import { HashRouter as Router, Routes, Route } from 'react-router-dom';
+import Home from './pages/Home';
+import CreateDeck from './pages/CreateDeck';
+import DeckViewer from './pages/DeckViewer';
+import './App.css';
 
-function App() {
+const App: React.FC = () => {
   return (
-    <Router basename={process.env.PUBLIC_URL}>
+    <Router>
       <div className="App">
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/view" element={<DeckViewer />} />
           <Route path="/create" element={<CreateDeck />} />
+          <Route path="/view" element={<DeckViewer />} />
         </Routes>
       </div>
     </Router>
   );
-}
+};
 
 export default App;

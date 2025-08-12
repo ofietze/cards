@@ -1,36 +1,27 @@
-import LZString from "lz-string";
-import { Deck } from "./pages/DeckViewer";
-import { CardData } from "./components/CardDeck";
+import LZString from 'lz-string';
 
-export const encodeDeck = (deck: Deck): string => {
-  const cards = deck.cards.map((card) => ({
-    q: card.question,
-    a: card.answer,
-  }));
-  const shortenedDeck = { n: deck.name, c: cards };
-  const json = JSON.stringify(shortenedDeck);
-  const compressed = LZString.compressToEncodedURIComponent(json);
-  return compressed;
-};
+export interface CardData {
+  question: string;
+  answer: string;
+}
 
-export const decodeDeck = (encoded: string | undefined): Deck => {
-  if (!encoded) {
-    throw new Error("Encoded data was undefined");
+export interface Deck {
+  name: string;
+  cards: CardData[];
+}
+
+export function encodeDeck(deck: Deck): string {
+  const jsonString = JSON.stringify(deck);
+  return LZString.compressToEncodedURIComponent(jsonString);
+}
+
+export function decodeDeck(encodedDeck: string): Deck | null {
+  try {
+    const decompressed = LZString.decompressFromEncodedURIComponent(encodedDeck);
+    if (!decompressed) return null;
+    return JSON.parse(decompressed);
+  } catch (error) {
+    console.error('Error decoding deck:', error);
+    return null;
   }
-  const decompressed = LZString.decompressFromEncodedURIComponent(encoded);
-  if (!decompressed) {
-    throw new Error("Failed to decompress data");
-  }
-  const shortenedDeck: { n: string; c: { q: string; a: string }[] } =
-    JSON.parse(decompressed);
-
-  const cards: CardData[] = [];
-  for (let index = 0; shortenedDeck.c[index]; index++) {
-    const current = shortenedDeck.c[index];
-    cards.push({ question: current.q, answer: current.a });
-  }
-
-  const name = shortenedDeck.n;
-
-  return { name, cards };
-};
+}

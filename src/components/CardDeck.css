@@ -1,22 +1,77 @@
 .card-deck {
-  position: relative;
-  width: 90%;
-  max-width: 400px;
-  height: 100%;
-  max-height: 600px;
-  margin: 0 auto;
-  perspective: 1000px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
+  padding: 20px;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
 }
 
-.next-button {
+.deck-title {
+  font-size: 2em;
+  margin-bottom: 30px;
+  color: #333;
+  text-align: center;
+}
+
+.card-container {
+  margin: 30px 0;
+}
+
+.card-info {
+  margin: 20px 0;
+  font-size: 1.1em;
+  color: #666;
+}
+
+.navigation {
+  display: flex;
+  gap: 15px;
   margin-top: 20px;
-  padding: 10px 20px;
-  font-size: 16px;
+}
+
+.nav-button, .flip-button {
+  padding: 12px 24px;
+  border: none;
+  border-radius: 25px;
   cursor: pointer;
-  z-index: 1;
-  position: relative;
+  font-size: 1em;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.nav-button {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+}
+
+.nav-button:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+}
+
+.nav-button:disabled {
+  background: #ccc;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}
+
+.flip-button {
+  background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+  color: white;
+}
+
+.flip-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(240, 147, 251, 0.4);
+}
+
+.card-deck-empty {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 200px;
+  font-size: 1.2em;
+  color: #666;
 }
