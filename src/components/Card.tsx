@@ -1,16 +1,15 @@
-import React from 'react';
-import { CardData } from '../utils';
-import './Card.css';
+import React from "react";
+import { CardData } from "../utils";
+import "./Card.css";
 
 interface CardProps {
   card: CardData;
   isFlipped: boolean;
-  onFlip: () => void;
 }
 
-const Card: React.FC<CardProps> = ({ card, isFlipped, onFlip }) => {
+const Card: React.FC<CardProps> = ({ card, isFlipped }) => {
   return (
-    <div className={`card ${isFlipped ? 'flipped' : ''}`} onClick={onFlip}>
+    <div className={`card ${isFlipped ? "flipped" : ""}`}>
       <div className="card-inner">
         <div className="card-front">
           <div className="card-content">
