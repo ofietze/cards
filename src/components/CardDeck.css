@@ -1,10 +1,12 @@
 .card-deck {
   display: flex;
   width: 100%;
+  max-width: 100vw;
   flex-direction: column;
   align-items: center;
   padding: 20px;
   transition: all 0.3s ease;
+  overflow-x: hidden;
 }
 
 .deck-title {
@@ -22,6 +24,9 @@
   padding: 20px;
   position: relative;
   height: 400px;
+  width: 100%;
+  max-width: 100vw;
+  overflow: hidden;
 }
 
 .card-wrapper {
@@ -73,8 +78,8 @@
 }
 
 .nav-button {
-  background: var(--card-bg-front);
-  color: white;
+  background: var(--md-primary-container);
+  color: var(--md-on-primary-container);
 }
 
 .nav-button:hover:not(:disabled) {
@@ -83,15 +88,16 @@
 }
 
 .nav-button:disabled {
-  background: var(--text-secondary);
+  background: var(--md-outline-variant);
+  color: var(--md-on-surface-variant);
   cursor: not-allowed;
   transform: none;
   box-shadow: none;
 }
 
 .flip-button {
-  background: var(--card-bg-back);
-  color: white;
+  background: var(--md-secondary-container);
+  color: var(--md-on-secondary-container);
 }
 
 .flip-button:hover {
@@ -105,5 +111,59 @@
   align-items: center;
   min-height: 200px;
   font-size: 1.2em;
-  color: #666;
+  color: var(--text-secondary);
+}
+
+/* Mobile optimizations */
+@media (max-width: 768px) {
+  .card-deck {
+    padding: 10px;
+    overflow-x: hidden;
+  }
+
+  .cards-row {
+    height: 240px;
+    margin: 20px 0;
+    padding: 10px;
+    overflow: hidden;
+  }
+
+  .card-wrapper {
+    touch-action: manipulation;
+  }
+
+  /* Increase hit area for cards behind the active card */
+  .card-wrapper:not(.active)::after {
+    content: "";
+    position: absolute;
+    top: -20px;
+    left: -20px;
+    right: -20px;
+    bottom: -20px;
+    z-index: 1;
+    pointer-events: auto;
+  }
+
+  /* Make inactive cards more visible and easier to tap */
+  .card-wrapper:not(.active) {
+    transform: scale(0.85);
+  }
+
+  .card-wrapper:not(.active):hover {
+    transform: scale(0.9) translateY(-10px);
+  }
+
+  .navigation {
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 15px;
+  }
+
+  .nav-button,
+  .flip-button {
+    padding: 14px 20px;
+    font-size: 1.1em;
+    min-height: 44px;
+    min-width: 44px;
+  }
 }

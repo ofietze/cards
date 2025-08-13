@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import { Deck, decodeDeck } from "../utils";
 import CardDeck from "../components/CardDeck";
+import "../components/Navbar.css";
 import "./DeckViewer.css";
 
 const DeckViewer: React.FC = () => {
@@ -46,7 +47,7 @@ const DeckViewer: React.FC = () => {
         <div className="error-container">
           <h2>Error Loading Deck</h2>
           <p>{error}</p>
-          <button onClick={() => navigate("/")} className="home-btn">
+          <button onClick={() => navigate("/")} className="nav-button">
             Go Home
           </button>
         </div>
@@ -64,19 +65,17 @@ const DeckViewer: React.FC = () => {
 
   return (
     <div className="deck-viewer">
-      <div className="deck-header">
-        <button onClick={() => navigate("/")} className="home-btn">
+      <nav className="navbar navbar-grid">
+        <button onClick={() => navigate("/")} className="nav-button">
           ← Home
         </button>
 
-        <h1 className="deck-title-header">{deck.name}</h1>
+        <h1 className="nav-app-title">{deck.name}</h1>
 
-        <div className="share-section">
-          <button onClick={copyShareUrl} className="share-btn">
-            📋 Copy Share URL
-          </button>
-        </div>
-      </div>
+        <button onClick={copyShareUrl} className="nav-button">
+          📋 Copy Share URL
+        </button>
+      </nav>
 
       <CardDeck deck={deck} />
     </div>

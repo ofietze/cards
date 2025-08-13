@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { CardData, Deck, encodeDeck } from '../utils';
+import '../components/Navbar.css';
 import './CreateDeck.css';
 
 const CreateDeck: React.FC = () => {
@@ -53,6 +54,15 @@ const CreateDeck: React.FC = () => {
 
   return (
     <div className="create-deck">
+      <nav className="navbar">
+        <div className="nav-title-card">
+          <h1 className="nav-app-title">Cards</h1>
+        </div>
+        <button onClick={() => navigate('/')} className="nav-button">
+          Back to Home
+        </button>
+      </nav>
+      
       <div className="create-deck-container">
         <h1>Create New Deck</h1>
         

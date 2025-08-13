@@ -1,13 +1,12 @@
 .create-deck {
   min-height: 100vh;
   background: var(--bg-primary);
-  padding: 20px;
   transition: all 0.3s ease;
 }
 
 .create-deck-container {
   max-width: 800px;
-  margin: 0 auto;
+  margin: 20px auto;
   background: var(--bg-secondary);
   backdrop-filter: blur(10px);
   border-radius: 10px;
@@ -16,10 +15,9 @@
   padding: 40px;
 }
 
-.create-deck h1 {
+.create-deck-container h1 {
   text-align: center;
   color: var(--text-primary);
-  margin-bottom: 30px;
   font-size: 2.5em;
 }
 
@@ -47,13 +45,13 @@
 
 .deck-name-section input:focus {
   outline: none;
-  border-color: var(--card-bg-front);
+  border-color: var(--md-primary);
 }
 
 .cards-section h2 {
   color: var(--text-primary);
   margin-bottom: 20px;
-  border-bottom: 2px solid var(--card-bg-front);
+  border-bottom: 2px solid var(--md-primary);
   padding-bottom: 10px;
 }
 
@@ -78,8 +76,8 @@
 }
 
 .remove-card-btn {
-  background: #dc3545;
-  color: white;
+  background: var(--md-error);
+  color: var(--md-on-error);
   border: none;
   padding: 8px 16px;
   border-radius: 5px;
@@ -88,7 +86,8 @@
 }
 
 .remove-card-btn:hover {
-  background: #c82333;
+  background: var(--md-error-container);
+  color: var(--md-on-error-container);
 }
 
 .card-form-fields {
@@ -120,12 +119,12 @@
 
 .field textarea:focus {
   outline: none;
-  border-color: var(--card-bg-front);
+  border-color: var(--md-primary);
 }
 
 .add-card-btn {
-  background: var(--card-bg-front);
-  color: white;
+  background: var(--md-primary-container);
+  color: var(--md-on-primary-container);
   border: none;
   padding: 12px 24px;
   border-radius: 25px;
@@ -148,7 +147,8 @@
   margin-top: 30px;
 }
 
-.create-deck-btn, .cancel-btn {
+.create-deck-btn,
+.cancel-btn {
   padding: 15px 30px;
   border: none;
   border-radius: 25px;
@@ -159,16 +159,17 @@
 }
 
 .create-deck-btn {
-  background: var(--card-bg-back);
-  color: white;
+  background: var(--md-primary);
+  color: var(--md-on-primary);
 }
 
 .cancel-btn {
-  background: var(--text-secondary);
-  color: white;
+  background: var(--md-secondary-container);
+  color: var(--md-on-secondary-container);
 }
 
-.create-deck-btn:hover, .cancel-btn:hover {
+.create-deck-btn:hover,
+.cancel-btn:hover {
   transform: translateY(-2px);
   box-shadow: 0 5px 15px var(--shadow-medium);
 }
@@ -176,12 +177,13 @@
 @media (max-width: 768px) {
   .create-deck-container {
     padding: 20px;
+    margin: 10px auto;
   }
-  
+
   .card-form-fields {
     grid-template-columns: 1fr;
   }
-  
+
   .form-actions {
     flex-direction: column;
   }

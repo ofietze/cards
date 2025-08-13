@@ -5,75 +5,12 @@
   transition: all 0.3s ease;
 }
 
-.home-navbar {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 20px 40px;
-  background: var(--bg-secondary);
-  backdrop-filter: blur(10px);
-  border-bottom: 1px solid var(--border-color);
-  position: sticky;
-  top: 0;
-  z-index: 100;
-}
 
-.nav-title-card {
-  position: relative;
-  background: var(--bg-secondary);
-  backdrop-filter: blur(10px);
-  border-radius: 8px;
-  box-shadow: 0 2px 4px var(--shadow-light);
-  border: 1px solid var(--border-color);
-  padding: 12px 20px;
-  overflow: hidden;
-  transition: all 0.3s ease;
-}
 
-.nav-title-card:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 4px 8px var(--shadow-medium);
-}
 
-.nav-title-card::after {
-  content: '';
-  position: absolute;
-  bottom: 0;
-  right: 0;
-  width: 0;
-  height: 0;
-  border-left: 8px solid transparent;
-  border-bottom: 8px solid rgba(255, 255, 255, 0.4);
-  pointer-events: none;
-}
 
-.nav-app-title {
-  font-size: 1.8em;
-  font-weight: 900;
-  margin: 0;
-  background: var(--card-bg-front);
-  background-clip: text;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  text-align: center;
-}
 
-.nav-create-btn {
-  background: var(--card-bg-back);
-  color: white;
-  border: none;
-  padding: 12px 24px;
-  font-size: 1em;
-  font-weight: 600;
-  border-radius: 20px;
-  cursor: pointer;
-  transition: all 0.3s ease;
-}
 
-.nav-create-btn:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 4px 12px var(--shadow-medium);
-}
 
 .home-container {
   width: 100%;
@@ -112,12 +49,12 @@
 }
 
 .feature {
-  background: rgba(255, 255, 255, 0.1);
+  background: var(--md-surface-variant);
   backdrop-filter: blur(10px);
   border-radius: 15px;
   padding: 30px;
   text-align: center;
-  border: 1px solid rgba(255, 255, 255, 0.2);
+  border: 1px solid var(--md-outline-variant);
 }
 
 .feature-icon {
@@ -128,7 +65,7 @@
 .feature h3 {
   font-size: 1.4em;
   margin-bottom: 15px;
-  color: white;
+  color: var(--md-on-surface-variant);
 }
 
 .feature p {
@@ -136,25 +73,24 @@
   line-height: 1.6;
 }
 
-
 .demo-info {
   opacity: 0.8;
   font-size: 1.1em;
 }
 
 .how-it-works {
-  background: rgba(255, 255, 255, 0.1);
+  background: var(--md-surface-variant);
   backdrop-filter: blur(10px);
   border-radius: 20px;
   padding: 50px;
-  border: 1px solid rgba(255, 255, 255, 0.2);
+  border: 1px solid var(--md-outline-variant);
 }
 
 .how-it-works h2 {
   text-align: center;
   font-size: 2.5em;
   margin-bottom: 50px;
-  color: white;
+  color: var(--md-on-surface-variant);
 }
 
 .steps {
@@ -172,7 +108,8 @@
   display: inline-block;
   width: 50px;
   height: 50px;
-  background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+  background: var(--md-tertiary);
+  color: var(--md-on-tertiary);
   border-radius: 50%;
   line-height: 50px;
   font-size: 1.5em;
@@ -187,24 +124,6 @@
 }
 
 @media (max-width: 768px) {
-  .home-navbar {
-    padding: 15px 20px;
-    flex-direction: column;
-    gap: 15px;
-  }
-
-  .nav-title-card {
-    padding: 10px 16px;
-  }
-
-  .nav-app-title {
-    font-size: 1.5em;
-  }
-
-  .nav-create-btn {
-    padding: 10px 20px;
-    font-size: 0.9em;
-  }
 
   .home-container {
     padding: 20px 10px;

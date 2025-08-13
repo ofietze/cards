@@ -2,6 +2,7 @@ import React from "react";
 import { useNavigate } from "react-router-dom";
 import CardDeck from "../components/CardDeck";
 import { Deck } from "../utils";
+import "../components/Navbar.css";
 import "./Home.css";
 
 const Home: React.FC = () => {
@@ -35,11 +36,11 @@ const Home: React.FC = () => {
 
   return (
     <div className="home">
-      <nav className="home-navbar">
+      <nav className="navbar">
         <div className="nav-title-card">
           <h1 className="nav-app-title">Cards</h1>
         </div>
-        <button onClick={() => navigate("/create")} className="nav-create-btn">
+        <button onClick={() => navigate("/create")} className="nav-button">
           Create New Deck
         </button>
       </nav>

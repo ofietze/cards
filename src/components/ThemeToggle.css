@@ -70,8 +70,8 @@
 
 @media (max-width: 768px) {
   .theme-toggle {
-    top: 15px;
     right: 15px;
+    bottom: 20px;
   }
 
   .theme-card {
