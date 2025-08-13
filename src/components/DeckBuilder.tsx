@@ -7,7 +7,6 @@ interface DeckBuilderProps {
   cards: CardData[];
   onDeckNameChange: (name: string) => void;
   onCreateDeck: () => void;
-  onDeleteCard: (index: number) => void;
   canCreateDeck: boolean;
 }
 
