@@ -38,7 +38,7 @@ const CreateDeck: React.FC = () => {
     navigate(`/view#${encodedDeck}`);
   };
 
-  const canCreateDeck = deckName.trim() && cards.length > 0;
+  const canCreateDeck = Boolean(deckName.trim() && cards.length > 0);
 
   return (
     <div className="create-deck">
