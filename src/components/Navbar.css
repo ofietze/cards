@@ -10,7 +10,8 @@
   position: sticky;
   top: 0;
   z-index: 100;
-  height: 90px;
+  min-height: 90px;
+  height: auto;
 }
 
 .nav-title-card {
@@ -54,20 +55,26 @@
 }
 
 .nav-button {
-  background: var(--md-on-surface-variant);
-  color: var(--md-on-primary);
-  border: none;
+  background: var(--md-secondary-container);
+  color: var(--md-on-secondary-container);
+  border: 2px solid var(--md-outline-variant);
   padding: 12px 24px;
   font-size: 1em;
-  font-weight: 600;
-  border-radius: 20px;
+  font-weight: 700;
+  border-radius: 25px;
   cursor: pointer;
   transition: all 0.3s ease;
+  box-shadow: 0 3px 10px var(--shadow-light);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
 }
 
 .nav-button:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 4px 12px var(--shadow-medium);
+  background: var(--md-secondary);
+  color: var(--md-on-secondary);
+  transform: translateY(-3px) scale(1.05);
+  box-shadow: 0 8px 20px var(--shadow-heavy);
+  border-color: var(--md-secondary);
 }
 
 /* Deck viewer specific styles for grid layout */
@@ -90,45 +97,103 @@
 /* Mobile styles */
 @media (max-width: 768px) {
   .navbar {
-    padding: 15px 20px;
-    flex-direction: column;
-    gap: 15px;
+    padding: 12px 15px;
+    flex-direction: row;
+    gap: 10px;
+    height: auto;
+    min-height: 70px;
+    align-items: center;
   }
 
   .nav-title-card {
-    padding: 10px 16px;
+    padding: 8px 12px;
+    flex-shrink: 0;
   }
 
   .nav-app-title {
-    font-size: 1.5em;
+    font-size: 1.3em;
+    white-space: nowrap;
   }
 
   .nav-button {
-    padding: 10px 20px;
-    font-size: 0.9em;
+    padding: 8px 16px;
+    font-size: 0.85em;
+    white-space: nowrap;
+    flex-shrink: 0;
+    font-weight: 700;
+    letter-spacing: 0.3px;
   }
 
   /* Deck viewer mobile grid layout */
   .navbar-grid {
-    padding: 15px 20px;
-    grid-template-columns: 1fr;
-    grid-template-rows: auto auto auto;
-    gap: 15px;
-    text-align: center;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 15px;
+    gap: 10px;
+    height: auto;
+    min-height: 70px;
   }
 
   .navbar-grid .nav-app-title {
-    font-size: 1.5em;
-    grid-row: 2;
+    font-size: 1.2em;
+    flex: 1;
+    text-align: center;
+    margin: 0 10px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
   }
 
-  .navbar-grid .nav-button:first-of-type {
-    grid-row: 1;
-    justify-self: start;
+  .navbar-grid .nav-button {
+    padding: 8px 12px;
+    font-size: 0.8em;
+    white-space: nowrap;
+    flex-shrink: 0;
+    font-weight: 700;
+    letter-spacing: 0.3px;
+  }
+}
+
+/* Extra small mobile screens */
+@media (max-width: 480px) {
+  .navbar {
+    padding: 10px 12px;
+    min-height: 65px;
+    gap: 8px;
   }
 
-  .navbar-grid .nav-button:last-of-type {
-    grid-row: 3;
-    justify-self: end;
+  .nav-title-card {
+    padding: 6px 10px;
+  }
+
+  .nav-app-title {
+    font-size: 1.1em;
+  }
+
+  .nav-button {
+    padding: 6px 12px;
+    font-size: 0.8em;
+    font-weight: 700;
+    letter-spacing: 0.2px;
+  }
+
+  .navbar-grid {
+    padding: 10px 12px;
+    min-height: 65px;
+    gap: 8px;
+  }
+
+  .navbar-grid .nav-app-title {
+    font-size: 1em;
+    margin: 0 8px;
+  }
+
+  .navbar-grid .nav-button {
+    padding: 6px 10px;
+    font-size: 0.75em;
+    font-weight: 700;
+    letter-spacing: 0.2px;
   }
 }

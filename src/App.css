@@ -50,38 +50,38 @@
 
 [data-theme="dark"] {
   /* Primary Colors - Dark */
-  --md-primary: #d0bcff;
-  --md-on-primary: #381e72;
-  --md-primary-container: #4f378b;
-  --md-on-primary-container: #eaddff;
+  --md-primary: #a18aff;
+  --md-on-primary: #2c1454;
+  --md-primary-container: #6750a4;
+  --md-on-primary-container: #d4c4ff;
 
   /* Secondary Colors - Dark */
-  --md-secondary: #ccc2dc;
-  --md-on-secondary: #332d41;
-  --md-secondary-container: #4a4458;
-  --md-on-secondary-container: #e8def8;
+  --md-secondary: #b8b0c7;
+  --md-on-secondary: #2f2a3e;
+  --md-secondary-container: #524966;
+  --md-on-secondary-container: #d0c6dd;
 
   /* Tertiary Colors - Dark */
-  --md-tertiary: #efb8c8;
-  --md-on-tertiary: #492532;
-  --md-tertiary-container: #633b48;
-  --md-on-tertiary-container: #ffd8e4;
+  --md-tertiary: #dba5b5;
+  --md-on-tertiary: #3f2329;
+  --md-tertiary-container: #59323a;
+  --md-on-tertiary-container: #f2cdd6;
 
   /* Surface Colors - Dark */
-  --md-surface: #1c1b1f;
-  --md-on-surface: #e6e1e5;
-  --md-surface-variant: #49454f;
-  --md-on-surface-variant: #cac4d0;
-  --md-background: #1c1b1f;
-  --md-on-background: #e6e1e5;
+  --md-surface: #1e1e22;
+  --md-on-surface: #e4e1e6;
+  --md-surface-variant: #2a2730;
+  --md-on-surface-variant: #b8b4be;
+  --md-background: #16161a;
+  --md-on-background: #e4e1e6;
 
   /* Outline and Other - Dark */
-  --md-outline: #938f99;
-  --md-outline-variant: #49454f;
-  --md-error: #ffb4ab;
-  --md-on-error: #690005;
-  --md-error-container: #93000a;
-  --md-on-error-container: #ffdad6;
+  --md-outline: #8a8694;
+  --md-outline-variant: #3e3a42;
+  --md-error: #f2b8b5;
+  --md-on-error: #601410;
+  --md-error-container: #8c1d18;
+  --md-on-error-container: #f9dedc;
 
   /* App-specific mappings - Dark */
   --bg-primary: var(--md-background);
@@ -89,11 +89,11 @@
   --text-primary: var(--md-on-background);
   --text-secondary: var(--md-on-surface-variant);
   --border-color: var(--md-outline-variant);
-  --card-bg-front: var(--md-primary);
-  --card-bg-back: var(--md-secondary);
-  --shadow-light: rgba(0, 0, 0, 0.24);
-  --shadow-medium: rgba(0, 0, 0, 0.32);
-  --shadow-heavy: rgba(0, 0, 0, 0.48);
+  --card-bg-front: var(--md-primary-container);
+  --card-bg-back: var(--md-secondary-container);
+  --shadow-light: rgba(0, 0, 0, 0.15);
+  --shadow-medium: rgba(0, 0, 0, 0.20);
+  --shadow-heavy: rgba(0, 0, 0, 0.30);
   --opposite-bg-secondary: #fffbfe;
 }
 

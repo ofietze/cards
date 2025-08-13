@@ -1,0 +1,238 @@
+.deck-builder {
+  position: fixed;
+  top: 50%;
+  right: 40px;
+  transform: translateY(-50%);
+  width: 300px;
+  z-index: 50;
+}
+
+.deck-builder-header {
+  margin-bottom: 20px;
+}
+
+.deck-name-input-container {
+  position: relative;
+}
+
+.deck-name-input {
+  width: 100%;
+  padding: 15px 20px;
+  border: 3px solid var(--md-primary-container);
+  border-radius: 15px;
+  font-size: 1.1em;
+  font-weight: 600;
+  background: var(--md-surface);
+  color: var(--text-primary);
+  transition: all 0.3s ease;
+  outline: none;
+}
+
+.deck-name-input:focus {
+  border-color: var(--md-primary);
+  box-shadow: 0 0 0 3px var(--md-primary-container);
+  transform: scale(1.02);
+}
+
+.deck-name-input::placeholder {
+  color: var(--text-secondary);
+  font-style: italic;
+}
+
+.deck-visualization {
+  background: var(--md-surface-variant);
+  border-radius: 20px;
+  padding: 25px;
+  min-height: 300px;
+  border: 2px solid var(--md-outline-variant);
+  backdrop-filter: blur(10px);
+  position: relative;
+  overflow: hidden;
+}
+
+.deck-stack {
+  position: relative;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.deck-title {
+  text-align: center;
+  color: var(--text-primary);
+  font-size: 1.3em;
+  font-weight: 700;
+  margin-bottom: 25px;
+  padding: 10px 15px;
+  background: var(--md-primary-container);
+  color: var(--md-on-primary-container);
+  border-radius: 12px;
+  box-shadow: 0 2px 8px var(--shadow-light);
+}
+
+.card-count {
+  font-size: 0.8em;
+  font-weight: 500;
+  opacity: 0.8;
+  margin-left: 8px;
+}
+
+.deck-cards {
+  position: relative;
+  width: 200px;
+  height: 140px;
+  margin: 0 auto;
+}
+
+.deck-card {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  animation: cardFlyIn 0.6s ease-out forwards;
+  transform-origin: center;
+}
+
+@keyframes cardFlyIn {
+  0% {
+    opacity: 0;
+    transform: translateX(-400px) translateY(-100px) rotate(-45deg) scale(0.3);
+  }
+  50% {
+    opacity: 0.8;
+    transform: translateX(-100px) translateY(-20px) rotate(-10deg) scale(0.7);
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.deck-card-preview {
+  width: 100%;
+  height: 100%;
+  background: var(--md-primary-container);
+  border-radius: 10px;
+  padding: 15px;
+  border: 2px solid var(--md-outline);
+  box-shadow: 0 4px 12px var(--shadow-medium);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.deck-card-question {
+  color: var(--md-on-primary-container);
+  font-size: 0.9em;
+  font-weight: 600;
+  line-height: 1.3;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.empty-deck {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 200px;
+  text-align: center;
+}
+
+.empty-deck-placeholder {
+  opacity: 0.7;
+}
+
+.empty-deck-placeholder h3 {
+  color: var(--text-secondary);
+  font-size: 1.2em;
+  margin-bottom: 10px;
+  font-weight: 600;
+}
+
+.empty-deck-placeholder p {
+  color: var(--text-secondary);
+  font-size: 1em;
+  font-style: italic;
+}
+
+.deck-actions {
+  margin-top: 20px;
+  text-align: center;
+}
+
+.create-deck-btn {
+  background: var(--md-primary);
+  color: var(--md-on-primary);
+  border: none;
+  padding: 15px 25px;
+  border-radius: 25px;
+  font-weight: 700;
+  font-size: 1.1em;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px var(--shadow-medium);
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+.create-deck-btn:hover:not(:disabled) {
+  transform: translateY(-3px) scale(1.02);
+  box-shadow: 0 8px 25px var(--shadow-heavy);
+}
+
+.create-deck-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}
+
+.deck-stats {
+  color: var(--text-secondary);
+  font-size: 0.9em;
+  font-weight: 500;
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+  .deck-builder {
+    position: static;
+    transform: none;
+    width: 100%;
+    margin: 30px 0;
+    padding: 0 20px;
+  }
+
+  .deck-visualization {
+    min-height: 250px;
+    padding: 20px;
+  }
+
+  .deck-cards {
+    width: 160px;
+    height: 110px;
+  }
+
+  .deck-card-preview {
+    padding: 12px;
+  }
+
+  .deck-card-question {
+    font-size: 0.8em;
+  }
+
+  @keyframes cardFlyIn {
+    0% {
+      opacity: 0;
+      transform: translateX(-200px) translateY(-50px) rotate(-30deg) scale(0.5);
+    }
+    50% {
+      opacity: 0.8;
+      transform: translateX(-50px) translateY(-10px) rotate(-5deg) scale(0.8);
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+}

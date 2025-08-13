@@ -40,13 +40,13 @@ const Home: React.FC = () => {
         <div className="nav-title-card">
           <h1 className="nav-app-title">Cards</h1>
         </div>
-        <button onClick={() => navigate("/create")} className="nav-button">
-          Create New Deck
-        </button>
       </nav>
 
       <div className="home-container">
         <CardDeck deck={tutorialDeck} />
+        <button onClick={() => navigate("/create")} className="nav-button">
+          Create New Deck
+        </button>
       </div>
     </div>
   );
